@@ -1,0 +1,239 @@
+/* Estilos Generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111!important;
+    color: white;
+}
+
+/* Estilos para el header */
+header {
+    background-color: #222;
+    width: 100%; /* Asegura que el header ocupe todo el ancho de la página */
+    overflow: hidden; /* Evita el desplazamiento horizontal */
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between; /* Esto distribuye el logo y el menú a lo largo del header */
+    align-items: center;
+    padding: 15px 50px;
+    border-bottom: 1px solid #333;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+}
+
+.logo {
+    flex: 0 1 auto; /* Ajuste para que el logo tenga el espacio justo */
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos de manera uniforme */
+    flex: 1; /* Hace que el menú ocupe el espacio restante */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: space-evenly; /* Distribuye los elementos de forma equitativa */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 0 15px; /* Añade espacio entre los enlaces */
+}
+
+nav ul li a:hover {
+    color: #ff2d55;
+}
+
+
+.hero-text h1 {
+    font-size: 4.5rem;
+    font-weight: 600;
+}
+
+.highlight {
+    color: #ff2d55;
+    font-weight: bold;
+}
+
+.highlight-text {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.description-text {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.hero-buttons {
+    margin-top: 60px;
+}
+
+.btn {
+    background-color: #ff2d55;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.btn-alt {
+    background-color: transparent;
+    border: 2px solid #ff2d55;
+    color: #ff2d55;
+    font-weight: 700;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #111;
+}
+
+.hero-text {
+    max-width: 55%; /* Ajusté un poco el ancho para dejar más espacio */
+}
+
+.hero-image {
+    margin-left: 160px; /* Mueve la imagen más a la izquierda */
+    flex-shrink: 0; /* Asegura que la imagen no se reduzca */
+}
+
+.hero-image img {
+    width: 350px;
+}
+
+  
+
+/* Servicios */
+.services {
+    display: flex;
+    justify-content: space-between; /* Asegura que los contenedores estén alineados */
+    padding: 50px;
+    gap: 20px; /* Espacio entre los contenedores */
+    flex-wrap: wrap; /* Permite que se ajusten si hay necesidad */
+}
+
+.service {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%; /* Mantén el 30% para que estén en una fila */
+    min-width: 300px; /* Asegura que no se haga más pequeño que esto */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+}
+
+.service img {
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    max-width: 300px; /* Ajusta el tamaño de la imagen para que no se extienda */
+}
+
+.service h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.service p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.service a {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+
+/* Footer */
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+
+.description-text {
+    font-size: 1.5rem; /* Ajusta el tamaño del texto según lo necesites */
+    
+  }
+
+  .welcome-message {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .badge-secondary {
+    background-color: #ff2d55; /* Ajusta el color si es necesario */
+    color: white;
+  }
+  
+/* Estilo del dropdown */
+nav ul li.dropdown {
+    position: relative;
+    z-index: 10001; /* Asegura que el contenedor esté en la parte superior */
+  }
+  
+  nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Asegura que el dropdown esté justo debajo del elemento principal */
+    left: 0;
+    background-color: #222;
+    min-width: 160px; /* Ancho del menú */
+    z-index: 10000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 0;
+  }
+  
+  nav ul li:hover .dropdown-content {
+    display: block; /* Muestra el menú cuando se pasa el ratón sobre el li */
+  }
+  
+  nav ul li .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  nav ul li .dropdown-content a:hover {
+    background-color: #ff2d55; /* Cambia el color cuando se pasa el ratón por encima */
+  }
+
+
+
+
+
+
+  

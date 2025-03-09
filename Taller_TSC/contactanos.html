@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" type="image/png" href="assets/iconotaller.png"> 
+    <title>Taller Mecánico - TOTES BGA</title>
+    <style>
+         
+
+      
+header {
+    position: relative;
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    overflow: visible; /* Permite que los submenús se muestren */
+}
+        .navbar {
+    position: relative;
+    z-index: 1000; /* Asegura que el menú tiene prioridad */
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(34, 34, 34, 0.4); /* Aumenta la transparencia al 70% */
+
+    display: none;
+    z-index: 2000;
+    width: 200px; /* Define un ancho para evitar que los ítems se alineen horizontalmente */
+    border: 2px solid #ff2d55; /* Agrega un borde de color rojo */
+    border-radius: 5px; /* Bordes redondeados para un mejor diseño */
+    padding: 5px 0; /* Espaciado interno */
+    backdrop-filter: blur(7px); /* Aplica un ligero desenfoque al fondo */
+}
+
+.nav-item:hover .submenu {
+    display: block;
+}
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li:hover .submenu {
+            display: block;
+        }
+
+        .submenu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: block;
+        }
+
+        .submenu ul li {
+    padding: 10px;
+    display: block; /* Asegura que cada elemento se muestre uno debajo del otro */
+    width: 100%;
+}
+
+.submenu ul li a {
+    display: block; /* Hace que el enlace ocupe todo el ancho del `li` */
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out; /* Transición suave al cambiar de color */
+
+}
+
+.submenu ul li a:hover {
+  color: #ff2d55; /* Cambia solo el color del texto a rojo */
+}
+    </style>
+  </head>
+  <body>
+  <header>
+        <div class="top-nav">
+            <div class="logo">
+                <img src="assets/Logo.png" alt="TOTES BGA" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="userindex.php">Inicio</a></li>
+                    <li>
+                        <a href="#">Mecánica Básica</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="cambioaceite.html">Cambio de Aceite y filtros</a></li>
+                                <li><a href="cambiobateria.html">Diagnostico y cambio de bateria</a></li>
+                                <li><a href="mantenimientofreno.html">Mantenimiento General de frenos</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Mecánica Especializada</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="servicioscanner.html">Servicios de Scanner</a></li>
+                                <li><a href="reparacionmotor.html">Reparacion de motor</a></li>
+                                <li><a href="correasmotor.html">Correas de motor</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="https://wa.me/573153576670?text=Hola%20*Taller%20mecanico%20TOTES%20BGA*.%20Necesito%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Taller%20mecanico%20TOTES%20BGA%20http://localhost/Taller_TSC/userindex.php">Servicio al Cliente</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                    <li><a href="logout.php">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <form action="https://formspree.io/f/mqapzjnz" method="POST">
+    <h1 style="font-family: 'Poppins', sans-serif; color: white; text-align: center; font-size: 36px; margin-bottom: 25px;">
+        Contáctanos
+      </h1>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 18px; max-width: 550px; margin: 0 auto;">
+        <input type="text" name="Nombre" placeholder="Nombre" autocomplete="off" required 
+          style="width: 100%; padding: 18px; font-size: 20px; font-family: 'Poppins', sans-serif; border: 1px solid #ccc; border-radius: 10px; outline: none; transition: 0.3s;">
+        
+        <input type="text" name="Apellido" placeholder="Apellido" autocomplete="off" required 
+          style="width: 100%; padding: 18px; font-size: 20px; font-family: 'Poppins', sans-serif; border: 1px solid #ccc; border-radius: 10px; outline: none; transition: 0.3s;">
+        
+        <input type="email" name="email" placeholder="Correo Electrónico" autocomplete="off" required 
+          style="width: 100%; padding: 18px; font-size: 20px; font-family: 'Poppins', sans-serif; border: 1px solid #ccc; border-radius: 10px; outline: none; transition: 0.3s;">
+        
+        <textarea rows="6" name="message" placeholder="Ingrese su mensaje" autocomplete="off" required 
+          style="width: 100%; padding: 18px; font-size: 20px; font-family: 'Poppins', sans-serif; border: 1px solid #ccc; border-radius: 10px; outline: none; transition: 0.3s; resize: none;"></textarea>
+        
+        <button type="submit" 
+          style="width: 100%; background-color: #ff2d55; color: white; border: none; padding: 18px; font-size: 22px; font-family: 'Poppins', sans-serif; font-weight: 600; cursor: pointer; border-radius: 10px; transition: 0.3s;">
+          Enviar Mensaje
+        </button>
+      </div>
+    </form>
+      
+      
+      
+   
+  </body>
+</html>

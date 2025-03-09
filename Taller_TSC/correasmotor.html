@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" type="image/png" href="assets/iconotaller.png"> 
+
+    <title>Taller Mecánico - TOTES BGA</title>
+    <style>
+        header {
+    position: relative;
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    overflow: visible; /* Permite que los submenús se muestren */
+}
+
+body {
+    background-color: #111 !important; /* Cambia el fondo de toda la página */
+    margin: 0;
+    padding: 0;
+}
+        .navbar {
+    position: relative;
+    z-index: 1000; /* Asegura que el menú tiene prioridad */
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(34, 34, 34, 0.4); /* Aumenta la transparencia al 70% */
+
+    display: none;
+    z-index: 2000;
+    width: 200px; /* Define un ancho para evitar que los ítems se alineen horizontalmente */
+    border: 2px solid #ff2d55; /* Agrega un borde de color rojo */
+    border-radius: 5px; /* Bordes redondeados para un mejor diseño */
+    padding: 5px 0; /* Espaciado interno */
+    backdrop-filter: blur(7px); /* Aplica un ligero desenfoque al fondo */
+}
+
+.nav-item:hover .submenu {
+    display: block;
+}
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li:hover .submenu {
+            display: block;
+        }
+
+        .submenu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: block;
+        }
+
+        .submenu ul li {
+    padding: 10px;
+    display: block; /* Asegura que cada elemento se muestre uno debajo del otro */
+    width: 100%;
+}
+
+.submenu ul li a {
+    display: block; /* Hace que el enlace ocupe todo el ancho del `li` */
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out; /* Transición suave al cambiar de color */
+
+}
+
+.submenu ul li a:hover {
+  color: #ff2d55; /* Cambia solo el color del texto a rojo */
+}
+        /* Estilo para el texto de descripción */
+        .description-text {
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        /* Estilo para los botones */
+        .btn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        /* Botón primario (Contáctanos) */
+        .btn-primary {
+            background-color: #ff2d55 !important;
+            color: white !important;
+            border: none !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #e0264a !important;
+        }
+
+        /* Botón secundario (Agendar cita) */
+        .btn-secondary {
+            background-color: transparent !important;
+            color: #ff2d55 !important;
+            border: 2px solid #ff2d55 !important;
+        }
+
+        .btn-secondary:hover {
+            background-color: #ff2d55 !important;
+            color: white !important;
+        }
+
+        .btn-contactanos {
+        background-color: #ff2d55;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-agendar {
+        background-color: transparent;
+        color: #ff2d55;
+        border: 2px solid #ff2d55;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+        .carousel {
+    background-color: #111 !important; /* Asegura que el carrusel también tenga fondo oscuro */
+}
+
+.carrusel-bootstrap {
+    max-width: 1500px; /* Ajusta el tamaño del carrusel */
+    width: 1500x !important;
+    height: 500px !important;
+    margin: auto; /* Centra el carrusel */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.carousel-inner img {
+    width: 1500px !important;
+    height: 500px !important;
+    object-fit: cover; /* Ajusta las imágenes */
+}
+
+.oil-change-info {
+            text-align: center;
+            padding: 30px;
+            background-color: #111; /* Fondo oscuro para mantener coherencia */
+            color: white;
+        }
+        .oil-change-info .btn {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-nav">
+            <div class="logo">
+                <img src="assets/Logo.png" alt="TOTES BGA" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="userindex.php">Inicio</a></li>
+                    <li>
+                        <a href="#">Mecánica Básica</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="cambioaceite.html">Cambio de Aceite y filtros</a></li>
+                                <li><a href="cambiobateria.html">Diagnóstico y cambio de batería</a></li>
+                                <li><a href="mantenimientofreno.html">Mantenimiento General de frenos</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Mecánica Especializada</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="servicioscanner.html">Servicios de Scanner</a></li>
+                                <li><a href="reparacionmotor.html">Reparación de motor</a></li>
+                                <li><a href="#">Correas de motor</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="https://wa.me/573153576670?text=Hola%20*Taller%20mecanico%20TOTES%20BGA*.%20Necesito%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Taller%20mecanico%20TOTES%20BGA%20http://localhost/Taller_TSC/userindex.php">Servicio al Cliente</a></li>
+                    <li><a href="contactanos.html">Contáctanos</a></li>
+                    <li><a href="logout.php">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1><span class="highlight">Cambio de correas de auto</span></h1>    
+            <p class="description-text">
+                En nuestro taller, ofrecemos un servicio completo de cambio de correas de auto para garantizar el buen funcionamiento y la seguridad de tu vehículo.
+                Nuestro equipo de técnicos altamente capacitados se encarga de sustituir las correas de distribución y accesorios con precisión y eficiencia, utilizando
+                piezas de calidad y herramientas especializadas.    
+            </p>
+    
+
+  <div class="hero-buttons">
+    <a href="contactanos.html" class="btn-contactanos">Contáctanos</a>
+    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1wlvUVXo0VD46RBwd4_-1J-_rNX6AnvM_a1DiSakJjGLYXywHSS8zqgnWrD1zsdnpURAHjGPkv?gv=true" class="btn-agendar" target="_blank">Agendar cita</a>
+</div>
+            
+        </div>
+        <div class="hero-image">
+            <img src="assets/reparacionmotor.png" alt="reparacionmotor" />
+        </div>
+    </section>
+        <!-- Bootstrap (Solo para el carrusel) -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Sección del Carrusel -->
+    <section class="carrusel-bootstrap">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/correasmotor1.jpeg" class="d-block w-100" alt="Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/correasmotor2.jpeg" class="d-block w-100" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/correasmotor3.jpeg" class="d-block w-100" alt="Imagen 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+        <!-- Sección de información sobre la correasdel motor-->
+        <section class="oil-change-info">
+            <div class="container">
+                <p class="description-text">
+                    No esperes hasta que sea demasiado tarde.
+                    Protege tu vehículo y tu tranquilidad en la carretera.
+                    Obtén una cotización personalizada hoy mismo y conduce con confianza.
+                </p>
+                <a href="#" class="btn btn-primary">Cotizar</a>
+            </div>
+        </section>
+
+        
+    <footer>
+        <div class="footer-logo">
+          <img src="assets/Logo.png" alt="TOTES BGA" />
+        </div>
+        <p>© 2025 TotesBGA Colombia. Todos los derechos reservados</p>
+      </footer>
+</body>
+</html>

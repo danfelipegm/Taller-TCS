@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" type="image/png" href="assets/iconotaller.png"> 
+    <title>Taller Mecánico - TOTES BGA</title>
+    <style>
+
+header {
+    position: relative;
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    overflow: visible; /* Permite que los submenús se muestren */
+}
+        .navbar {
+    position: relative;
+    z-index: 1000; /* Asegura que el menú tiene prioridad */
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(34, 34, 34, 0.4); /* Aumenta la transparencia al 70% */
+
+    display: none;
+    z-index: 2000;
+    width: 200px; /* Define un ancho para evitar que los ítems se alineen horizontalmente */
+    border: 2px solid #ff2d55; /* Agrega un borde de color rojo */
+    border-radius: 5px; /* Bordes redondeados para un mejor diseño */
+    padding: 5px 0; /* Espaciado interno */
+    backdrop-filter: blur(7px); /* Aplica un ligero desenfoque al fondo */
+}
+
+.nav-item:hover .submenu {
+    display: block;
+}
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li:hover .submenu {
+            display: block;
+        }
+
+        .submenu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: block;
+        }
+
+        .submenu ul li {
+    padding: 10px;
+    display: block; /* Asegura que cada elemento se muestre uno debajo del otro */
+    width: 100%;
+}
+
+.submenu ul li a {
+    display: block; /* Hace que el enlace ocupe todo el ancho del `li` */
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out; /* Transición suave al cambiar de color */
+
+}
+
+.submenu ul li a:hover {
+  color: #ff2d55; /* Cambia solo el color del texto a rojo */
+}
+
+.ownersInfoSection{
+    width: 100%;
+    height: 100%;
+}
+.ownersInfoCon>h1{
+    text-transform: uppercase;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+.ownersItems{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3rem;
+    max-width: 80vw;
+    width: fit-content;
+
+}
+.ownersInfoCon{
+    margin: 4rem auto;
+    width: fit-content;
+}
+
+.ownerInfoItemCon{
+    width: 500px;
+    background-color: var(--white-color);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 14px 24px rgba(0,0,0,.20);
+    padding: 1rem auto;
+    transition: 0.1s;
+}
+.ownerInfoItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ownerInfoItem img{
+    width: 100%;
+    
+}
+.ownerInfoItemCon .detail{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.ownerInfoItem a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+}
+.ownerInfoItemCon:hover{
+    transform: scale(1.02);
+}
+.ownerInfoItem a:hover{
+    color: var(--secondary-color);
+}
+body{
+    background-color: #eef8f5;
+}
+@media screen and (max-width:768px){
+    .ownersInfoCon {
+        margin: 2rem auto;
+        width: fit-content;
+        margin-bottom: 4rem;
+    }
+    .ownersItems {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3rem;
+        max-width: 90vw;
+        width: fit-content;
+    }
+    .ownerInfoItemCon {
+        width: auto;
+        
+    }
+    .ownersInfoCon>h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        padding-bottom: 1.5rem;
+        padding-top: 1rem;
+    }
+
+}
+@media screen and (max-width:450px) {
+    
+    .ownersItems {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3rem;
+        max-width: 95vw;
+        width: fit-content;
+        justify-content: center;
+    }
+    .ownerInfoItemCon {
+        width: auto;
+        background-color: var(--white-color);
+        
+    }
+    
+    .ownersInfoCon {
+        margin: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 4rem;
+        width: 100%;
+    }
+    .ownersInfoCon>h1 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        padding: 2rem 0 1rem 0;
+        text-align: center;
+    }
+
+}
+    </style>
+  </head>
+  <body>
+  <header>
+        <div class="top-nav">
+            <div class="logo">
+                <img src="assets/Logo.png" alt="TOTES BGA" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="userindex.php">Inicio</a></li>
+                    <li>
+                        <a href="#">Mecánica Básica</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="cambioaceite.html">Cambio de Aceite y filtros</a></li>
+                                <li><a href="cambiobateria.html">Diagnostico y cambio de bateria</a></li>
+                                <li><a href="mantenimientofreno.html">Mantenimiento General de frenos</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Mecánica Especializada</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="servicioscanner.html">Servicios de Scanner</a></li>
+                                <li><a href="reparacionmotor.html">Reparacion de motor</a></li>
+                                <li><a href="correasmotor.html">Correas de motor</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="https://wa.me/573153576670?text=Hola%20*Taller%20mecanico%20TOTES%20BGA*.%20Necesito%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Taller%20mecanico%20TOTES%20BGA%20http://localhost/Taller_TSC/userindex.php">Servicio al Cliente</a></li>
+                    <li><a href="contactanos.html">Contáctanos</a></li>
+                    <li><a href="logout.php">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="ownersInfoSection">
+        <div class="ownersInfoCon">
+          <h1>Conoce a nuestro Equipo</h1>
+          <div class="ownersItems">
+            <div class="ownerInfoItem">
+              <div class="ownerInfoItemCon">
+                <div class="imgDiv">
+                  <img src="assets/urqui.png" alt="arsalan-img" />
+                </div>
+                <div class="detail">
+                    <h2>Joseph Urquijo</h2>
+                    <p><strong>Scrum Master</strong></p>
+                    <p>
+                      Facilita la comunicación y el trabajo en equipo, asegurando el cumplimiento de la metodología ágil y eliminando obstáculos en el desarrollo del proyecto.
+                    </p>
+                    <div class="OwnerContact">
+                      <a href="mailto:joseph.urquijo.2023@upb.edu.co">
+                        <i class="fa-regular fa-envelope"></i>
+                        <h4>Contact joseph.urquijo.2023@upb.edu.co</h4>
+                      </a>
+                    </div>
+                  </div>
+                  
+              </div>
+            </div>
+            <div class="ownerInfoItem">
+              <div class="ownerInfoItemCon">
+                <div class="imgDiv">
+                  <img src="assets/dante.png" alt="arsalan-img" />
+                </div>
+                <div class="detail">
+                    <h2>Jan Leal</h2>
+                    <p><strong>Developer | Ingeniero de Requerimientos y Documentación</strong></p>
+                    <p>
+                      Responsable del desarrollo de software y la recopilación de requisitos, asegurando una documentación clara y estructurada para la correcta implementación del proyecto.
+                    </p>
+                    <div class="OwnerContact">
+                      <a href="mailto:jan.leal.2023@upb.edu.co">
+                        <i class="fa-regular fa-envelope"></i>
+                        <h4>Contact jan.leal.2023@upb.edu.co</h4>
+                      </a>
+                    </div>
+                  </div>
+                  
+              </div>
+            </div>
+            <div class="ownerInfoItem">
+              <div class="ownerInfoItemCon">
+                <div class="imgDiv">
+                  <img
+                    src="assets/rojo.png"
+                    alt="arsalan-img"
+                  />
+                </div>
+                <div class="detail">
+                    <h2>Juan Carlos Niño</h2>
+                    <p><strong>Product Owner | DBA</strong></p>
+                    <p>
+                      Define la visión del producto y prioriza los requerimientos del cliente, además de gestionar y optimizar la base de datos para garantizar su rendimiento y seguridad.
+                    </p>
+                    <div class="OwnerContact">
+                      <a href="mailto:juanc.nino.2023@upb.edu.co">
+                        <i class="fa-regular fa-envelope"></i>
+                        <h4>Contact juanc.nino.2023@upb.edu.co</h4>
+                      </a>
+                    </div>
+                  </div>
+                  
+              </div>
+            </div>
+            <div class="ownerInfoItem">
+                <div class="ownerInfoItemCon">
+                  <div class="imgDiv">
+                    <img src="assets/juance.png" alt="arsalan-img" />
+                  </div>
+                  <div class="detail">
+                    <h2>Juan Contreras</h2>
+                    <p><strong>Developer | Diseñador Frontend</strong></p>
+                    <p>
+                      Encargado del desarrollo e implementación de la interfaz de usuario, asegurando una experiencia visual atractiva y funcional para los usuarios del sistema.
+                    </p>
+                    <div class="OwnerContact">
+                      <a href="mailto:juan.contrerash.2023@upb.edu.co">
+                        <i class="fa-regular fa-envelope"></i>
+                        <h4>Contact juan.contrerash.2023@upb.edu.co</h4>
+                      </a>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+          </div>
+          <div class="ownerInfoItem">
+            <div class="ownerInfoItemCon">
+              <div class="imgDiv">
+                <img
+                  src="assets/daniel.png"
+                  alt="arsalan-img"
+                />
+              </div>
+              <div class="detail">
+                <h2>Daniel Gutiérrez</h2>
+                <p><strong>Developer | Backend</strong></p>
+                <p>
+                  Responsable del desarrollo y mantenimiento de la lógica del servidor, gestión de bases de datos y optimización del rendimiento del sistema.
+                </p>
+                <div class="OwnerContact">
+                  <a href="mailto:daniel.gutierrez.2023@upb.edu.co">
+                    <i class="fa-regular fa-envelope"></i>
+                    <h4>Contact daniel.gutierrez.2023@upb.edu.co</h4>
+                  </a>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+    
+    <footer>
+      <div class="footer-logo">
+        <img src="assets/Logo.png" alt="TOTES BGA" />
+      </div>
+      <p>© 2025 TotesBGA Colombia. Todos los derechos reservados</p>
+    </footer>
+  </body>
+</html>
