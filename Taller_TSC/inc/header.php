@@ -83,6 +83,7 @@ $users = new Users();
       label {
         color: #bbb;
       }
+      
     </style>
 
   </head>
@@ -136,6 +137,17 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 
                 <a class="nav-link" href="addUser.php"><i class="fas fa-user-plus mr-2"></i>Agregar Usuario </span></a>
               </li>
+              <li class="nav-item
+<?php
+  $path = $_SERVER['SCRIPT_FILENAME'];
+  $current = basename($path, '.php');
+  if ($current == 'addService') {
+    echo " active ";
+  }
+?>">
+  <a class="nav-link" href="addService.php"><i class="fas fa-cogs mr-2"></i>Agregar Servicio</a>
+</li>
+            
             <?php  } ?>
             <li class="nav-item
             <?php
