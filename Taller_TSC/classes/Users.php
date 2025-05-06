@@ -256,15 +256,15 @@ class Users{
   <strong>Error !</strong> Email or Password not be Empty !</div>';
           return $msg;
 
-      }elseif (filter_var($email, FILTER_VALIDATE_EMAIL === FALSE)) {
+      }elseif (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
         $msg = '<div class="alert alert-danger alert-dismissible mt-3" id="flash-msg">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong>Error !</strong> Invalid email address !</div>';
-          return $msg;
-      }elseif ($checkEmail == FALSE) {
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Error!</strong> Email o Contraseña Incorrecta.</div>';
+        return $msg;
+    }elseif ($checkEmail === FALSE) {
         $msg = '<div class="alert alert-danger alert-dismissible mt-3" id="flash-msg">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong>Error !</strong> Email did not Found, use Register email or password please !</div>';
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Error!</strong> Email o Contraseña Incorrecta.</div>';
           return $msg;
       }else{
 

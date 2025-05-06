@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 21 déc. 2020 à 13:14
--- Version du serveur :  5.7.19
--- Version de PHP :  7.1.9
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 05-04-2025 a las 05:10:02
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,38 +18,39 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `db_admin`
+-- Base de datos: `db_admin`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `tbl_product`
+-- Estructura de tabla para la tabla `products`
 --
 
-DROP TABLE IF EXISTS `tbl_product`;
-CREATE TABLE IF NOT EXISTS `tbl_product` (
-  `Name` varchar(50) NOT NULL,
-  `Prix` int(11) NOT NULL,
-  `Categorie` varchar(50) NOT NULL,
-  `etat` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `products` (
+  `id` int(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL,
+  `stock` int(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `state` tinyint(1) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `tbl_roles`
+-- Estructura de tabla para la tabla `tbl_roles`
 --
 
-DROP TABLE IF EXISTS `tbl_roles`;
-CREATE TABLE IF NOT EXISTS `tbl_roles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'role_id',
-  `role` varchar(255) DEFAULT NULL COMMENT 'role_text',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `tbl_roles` (
+  `id` int(11) NOT NULL COMMENT 'role_id',
+  `role` varchar(255) DEFAULT NULL COMMENT 'role_text'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `tbl_roles`
+-- Volcado de datos para la tabla `tbl_roles`
 --
 
 INSERT INTO `tbl_roles` (`id`, `role`) VALUES
@@ -61,34 +61,76 @@ INSERT INTO `tbl_roles` (`id`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `tbl_users`
+-- Estructura de tabla para la tabla `tbl_users`
 --
 
-DROP TABLE IF EXISTS `tbl_users`;
-CREATE TABLE IF NOT EXISTS `tbl_users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_users` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `mobile` varchar(25) DEFAULT NULL,
   `roleid` tinyint(4) DEFAULT NULL,
-  `isActive` tinyint(4) DEFAULT '0',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
+  `isActive` tinyint(4) DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `tbl_users`
+-- Volcado de datos para la tabla `tbl_users`
 --
 
 INSERT INTO `tbl_users` (`id`, `name`, `username`, `email`, `password`, `mobile`, `roleid`, `isActive`, `created_at`, `updated_at`) VALUES
-(23, 'achref', 'achref', 'achref.nefzazoui@gmail.com', '3ea543d29ad3c1c09fcfbdda3f2f0617c50ab138', '54852852', 1, 0, '2020-12-19 14:35:56', '2020-12-19 14:35:56'),
-(24, 'ahmed', 'benahmed', 'achme@gmail.com', '7f0c9d56d40c3cc1e23e0113d5377779a4de86ff', '54277528', 3, 0, '2020-12-19 15:13:39', '2020-12-19 15:13:39'),
-(25, 'Fathi', 'fathiA', 'fathianh@gmail.com', '0a859b9a4ebbde4f63383bca7e34890985782348', '54672828', 3, 0, '2020-12-19 15:15:52', '2020-12-19 15:15:52'),
-(26, 'Makrem', 'makrem', 'makrem@gmail.com', 'adef7009a84a71c226ddf68671e929d68a707762', '42551771', 3, 0, '2020-12-19 15:16:59', '2020-12-19 15:16:59'),
-(27, 'Sirin', 'Sirin', 'Sirin@gmail.com', '03ee5fda2eae80be34c0142fe28ac6401e63324c', '23451671', 3, 0, '2020-12-19 15:17:34', '2020-12-19 15:17:34');
+(29, 'Joseph Camilo', 'urqui', 'josephcamilourquijo@gmail.com', 'd80a1ca789c7de5df1ff7e1b854252e165627932', '3153576670', 1, 0, '2025-02-21 22:16:25', '2025-02-21 22:16:25'),
+(30, 'Juan Contreras', 'pene', 'juan@gmail.com', 'd5221b10c2cdf4e54ca4b2142fa0f57b6c6e2ec7', '1111111', 2, 0, '2025-02-21 22:26:04', '2025-02-21 22:26:04'),
+(31, 'usuario', 'urqui', 'joseph@tsc.com', 'd80a1ca789c7de5df1ff7e1b854252e165627932', '1111111', 3, 0, '2025-02-23 21:47:36', '2025-02-23 21:47:36'),
+(32, 'usuario', 'luxury777', 'luxury@gmail.com', '4c1265ddd58d0917a63f6b43013be2886b112c16', '1111111', 3, 0, '2025-03-01 22:12:44', '2025-03-01 22:12:44'),
+(33, 'Jan Dante', 'GORDANTE', 'jan@totesbga.com', 'd80a1ca789c7de5df1ff7e1b854252e165627932', '3183579940', 3, 0, '2025-03-04 03:35:10', '2025-03-04 03:35:10');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `tbl_roles`
+--
+ALTER TABLE `tbl_roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT de la tabla `tbl_roles`
+--
+ALTER TABLE `tbl_roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'role_id', AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

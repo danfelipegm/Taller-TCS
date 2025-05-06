@@ -22,7 +22,7 @@ $users = new Users();
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Modulo de Gestion de Usuario TSC</title>
+    <title>Modulo de Gestion de Usuario TAller TOTES BGA</title>
     <link rel="stylesheet" href="assets/bootstrap.min.css">
     <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/dataTables.bootstrap4.min.css">
@@ -34,7 +34,7 @@ $users = new Users();
         <!-- Estilos CSS para modo oscuro -->
         <style>
       body {
-        background-color: #121212;
+        background-color: #191919;
         color: #e0e0e0;
         font-family: 'Poppins', sans-serif;
       }
@@ -52,7 +52,7 @@ $users = new Users();
     
 
       .card-body {
-        background-color: #121212;
+        background-color: #191919;
       }
 
       .btn-success {
@@ -108,7 +108,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
     <div class="container">
 
       <nav class="navbar navbar-expand-md navbar-dark bg-dark card-header">
-        <a class="navbar-brand" href="index.php"><i class="fas fa-home mr-2"></i>TSC EMPRESA TALLER</a>
+        <a class="navbar-brand" href="index.php"><i class="fas fa-home mr-2"></i>TALLER TOTES BGA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
